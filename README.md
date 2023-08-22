@@ -6,3 +6,8 @@ The **Automated Table Detection and Recognition from Scanned Images project** is
 
 **Key Features**
 
+- **Precise Table Identification**: Our algorithm can precisely locate tables within scanned images, even in cases with complex layouts and diverse fonts.
+
+- **Robust Image Quality Handling**: It's capable of handling varying image quality levels, ensuring reliable performance across different scanned documents.
+
+- **Data Extraction**: Beyond table detection, this algorithm excels at extracting data from these tables, making it a comprehensive tool for data analysis.
