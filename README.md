@@ -29,4 +29,10 @@ To run this project, you'll need:
 - *subprocess*
 - *PIL*
 
+**Installation**
+
+git clone https://github.com/oussama95boussaid/Automated_Table_Detection_and_recognition_from_Scanned_Images_PDFs.git
+cd Automated_Table_Detection_and_recognition_from_Scanned_Images_PDFs
+
+
 
