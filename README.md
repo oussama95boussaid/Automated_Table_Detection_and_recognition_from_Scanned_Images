@@ -6,8 +6,27 @@ The **Automated Table Detection and Recognition from Scanned Images project** is
 
 **Key Features**
 
-- **Precise Table Identification**: Our algorithm can precisely locate tables within scanned images, even in cases with complex layouts and diverse fonts.
+- **Precise Table Identification** : Our algorithm can precisely locate tables within scanned images, even in cases with complex layouts and diverse fonts.
 
-- **Robust Image Quality Handling**: It's capable of handling varying image quality levels, ensuring reliable performance across different scanned documents.
+- **Robust Image Quality Handling** : It's capable of handling varying image quality levels, ensuring reliable performance across different scanned documents.
 
-- **Data Extraction**: Beyond table detection, this algorithm excels at extracting data from these tables, making it a comprehensive tool for data analysis.
+- **Data Extraction** : Beyond table detection, this algorithm excels at extracting data from these tables, making it a comprehensive tool for data analysis.
+
+**Getting Started**
+
+These instructions will help you get a copy of the project up and running on your local machine for development and testing purposes.
+
+**Prerequisites**
+
+To run this project, you'll need:
+
+- *tesseract-ocr-fra*
+- *ultralyticsplus (version 0.0.23)*
+- *ultralytics (version 8.0.21)*
+- *opencv2*
+- *pandas*
+- *csv*
+- *subprocess*
+- *PIL*
+
+
