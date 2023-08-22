@@ -30,9 +30,11 @@ To run this project, you'll need:
 - *PIL*
 
 **Installation**
+git clone https://github.com/yourusername/automated-table-detection.git
+cd automated-table-detection
 
-git clone https://github.com/oussama95boussaid/Automated_Table_Detection_and_recognition_from_Scanned_Images_PDFs.git
-cd Automated_Table_Detection_and_recognition_from_Scanned_Images_PDFs
+ git clone https://github.com/oussama95boussaid/Automated_Table_Detection_and_recognition_from_Scanned_Images_PDFs.git
+ cd Automated_Table_Detection_and_recognition_from_Scanned_Images_PDFs
 
 
 
