@@ -1,2 +1,8 @@
-# Automated_Table_Detection_and_recognition_from_Scanned_Images_PDFs
-The core objective of this project is to develop a sophisticated algorithm capable of accurately identifying tables within scanned images,     even when confronted with diverse layouts,fonts, and varying image quality levels.This algorithm will not only locate these tables but also perform data extraction from them.
+# **Automated Table Detection and Recognition from Scanned Images**
+
+**Project Overview**
+
+The **Automated Table Detection and Recognition from Scanned Images project** is a sophisticated algorithm designed to accurately identify tables within scanned images. Its core objective is to overcome challenges related to diverse layouts, fonts, and varying image quality levels. This algorithm not only excels at locating tables but also seamlessly extracts valuable data from them.
+
+**Key Features**
+
