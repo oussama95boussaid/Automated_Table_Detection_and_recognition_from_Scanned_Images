@@ -12,7 +12,7 @@ import csv
 
 
 #load The image
-image = 'test4.jpg'
+image = './test_images/test3.jpg'
 img = Image.open(image)
 
 # load model
