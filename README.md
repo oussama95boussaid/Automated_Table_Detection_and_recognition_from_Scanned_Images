@@ -34,14 +34,14 @@ To run this project, you'll need:
     git clone https://github.com/oussama95boussaid/Automated_Table_Detection_and_recognition_from_Scanned_Images_PDFs.git
     cd Automated_Table_Detection_and_recognition_from_Scanned_Images_PDFs
 
-**Install the required libraries:**
+**Install the required libraries for linux:**
 
     !sudo apt install tesseract-ocr-fra
     !pip install pytesseract transformers ultralyticsplus==0.0.23 ultralytics==8.0.21
 
 **Run the algorithm:**
 
-    python table_detection_and_extraction_Project.ipynb
+    python table_detection_and_extraction_Project.py
 
 
 
