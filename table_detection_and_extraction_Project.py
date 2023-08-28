@@ -12,7 +12,7 @@ import csv
 
 
 #load The image
-image = './test_images/test3.jpg'
+image = 'test3.jpg'
 img = Image.open(image)
 
 # load model
@@ -203,13 +203,13 @@ def generate_csv_file(talbes):
         for row in talbes:
             f.write(",".join(row) + "\n")
 """
-def generate_csv_file(input_table):
-    with open("./outputs/Extracted_table.csv", 'w', newline='') as csvfile:
+def generate_csv_file(input_table,i):
+    with open("Extracted_table"+i+".csv", 'w', newline='') as csvfile:
         csv_writer = csv.writer(csvfile)
         for row in input_table:
             csv_writer.writerow(row)
 
-for table in tables:
+for i,table in enumerate(tables):
     image_with_padding = add_10_percent_padding(table)
     processed_img = img_Preprocessing(image_with_padding)
     combined_img = combine_eroded_images(processed_img)
@@ -221,15 +221,4 @@ for table in tables:
     mean_height = get_mean_height_of_bounding_boxes(bounding_boxes)
     sorted_rows = sort_and_club_all_bounding_boxes_by_similar_y_coordinates_into_rows(bounding_boxes,mean_height)
     table = crop_each_bounding_box_and_ocr(sorted_rows,image_with_padding)
-    generate_csv_file(table)
-
-
-
-    
-
-
-
-
-
-
-
+    generate_csv_file(table,i)
