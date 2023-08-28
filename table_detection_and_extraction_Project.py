@@ -12,7 +12,7 @@ import csv
 
 
 #load The image
-image = 'test3.jpg'
+image = './test_images/test3.jpg'
 img = Image.open(image)
 
 # load model
@@ -204,7 +204,7 @@ def generate_csv_file(talbes):
             f.write(",".join(row) + "\n")
 """
 def generate_csv_file(input_table,i):
-    with open("Extracted_table"+i+".csv", 'w', newline='') as csvfile:
+    with open("./outputs/Extracted_table"+i+".csv", 'w', newline='') as csvfile:
         csv_writer = csv.writer(csvfile)
         for row in input_table:
             csv_writer.writerow(row)
