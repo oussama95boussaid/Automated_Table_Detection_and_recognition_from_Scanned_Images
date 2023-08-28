@@ -1,4 +1,4 @@
-# Table Detection and Extraction From Image Project
+                                                # Table Detection and Extraction From Image Project
 # Step 1 : Detecting the table from the image 
 import numpy as np
 import pandas as pd
@@ -45,6 +45,7 @@ for i in range(len(results[0].boxes.data.numpy())):
   image_tab = Image.fromarray(cropped_image)
   tables_vesul.append(image_tab)
   
+# Step 2 : Extracting data from the table 
 
 def add_10_percent_padding(img):
     image_height = img.shape[0]
@@ -93,6 +94,8 @@ def subtract_combined_and_dilated_image_from_original_image(processed_img,combin
     image_without_lines_noise_removed = cv2.erode(img_without_lines, kernel)
     image_without_lines_noise_removed = cv2.dilate(image_without_lines_noise_removed, kernel)
     return image_without_lines_noise_removed
+
+# Finding The Blobs and Extracting The Text From Them 
 
 # Use Dilation To Convert The Words Into Blobs
 def dilate_image(thresholded_image):
@@ -151,7 +154,6 @@ def sort_and_club_all_bounding_boxes_by_similar_y_coordinates_into_rows(bounding
     # sort_all_rows_by_x_coordinate
     for row in rows:
         row.sort(key=lambda x: x[0])
-
     # Sort rows by the Y coordinate of the first box in each row
     # rows.sort(key=lambda row: row[0][1])
     return rows
@@ -183,11 +185,11 @@ def tesseract_results(image_path):
         'tesseract ' + image_path + ' - -l fra+eng --oem 3 --psm 6 --dpi 300 '
     )
     # tesseract_command = ' tesseract  - -l fra+eng  --oem 3 --psm 6 --dpi 300 '
-
+    
     # Run the Tesseract command using subprocess
     output = subprocess.getoutput(tesseract_command)
     # output = pytesseract.image_to_string(image_path)
-
+    
     # Strip any leading or trailing whitespace from the output
     output = output.strip('|')
     output = output.replace('\n', ' ')
@@ -202,7 +204,7 @@ def generate_csv_file(talbes):
             f.write(",".join(row) + "\n")
 """
 def generate_csv_file(input_table):
-    with open("final_result.csv", 'w', newline='') as csvfile:
+    with open("Extracted_table.csv", 'w', newline='') as csvfile:
         csv_writer = csv.writer(csvfile)
         for row in input_table:
             csv_writer.writerow(row)
@@ -213,6 +215,16 @@ for table in tables:
     combined_img = combine_eroded_images(processed_img)
     img_without_lines = subtract_combined_and_dilated_image_from_original_image(processed_img,combined_img)
     # Finding the cells & extracting the text using OCR
+    dilated_img = dilate_image(img_without_lines)
+    contours,image_with_contours_drawn = find_contours(dilated_img,image_with_padding)
+    bounding_boxes,img_bouding_boxes = convert_contours_to_bounding_boxes(contours,image_with_padding)
+    mean_height = get_mean_height_of_bounding_boxes(bounding_boxes)
+    sorted_rows = sort_and_club_all_bounding_boxes_by_similar_y_coordinates_into_rows(bounding_boxes,mean_height)
+    table = crop_each_bounding_box_and_ocr(sorted_rows,image_with_padding)
+    generate_csv_file(table)
+
+
+
     
 
 
