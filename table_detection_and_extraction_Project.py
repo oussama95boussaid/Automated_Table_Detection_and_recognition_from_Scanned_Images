@@ -204,7 +204,7 @@ def generate_csv_file(talbes):
             f.write(",".join(row) + "\n")
 """
 def generate_csv_file(input_table):
-    with open("Extracted_table.csv", 'w', newline='') as csvfile:
+    with open("./outputs/Extracted_table.csv", 'w', newline='') as csvfile:
         csv_writer = csv.writer(csvfile)
         for row in input_table:
             csv_writer.writerow(row)
