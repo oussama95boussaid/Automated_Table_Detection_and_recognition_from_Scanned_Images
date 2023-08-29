@@ -68,6 +68,9 @@ These parameter settings were meticulously chosen to strike a balance between pr
 
 <img src = "img_Preprocessing/combined_org_dete_img.png" >
 
+After detecting the table that's the result of cropping it from the image based on boxes
+
+<img src = "img_Preprocessing/extracted_img.png" >
 
 
 # Finding the cells & extracting the text using OCR from the table
