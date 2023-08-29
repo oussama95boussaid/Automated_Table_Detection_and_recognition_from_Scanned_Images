@@ -80,15 +80,20 @@ This stage **Removing The Lines** is mainly to delete table Lines.
 
 This will help us get a clear picture of the OCR process. In the end, only the text in the table cells remains in the image.
 
-1. add 10 percent padding :
+1. **add 10 percent padding** :
 
    This will be needed in the next stage when we remove the lines Without this, the lines do not get removed fully
  
-2. Grey-scaling & Thresholding &  Inverting :
+2. **Grey-scaling & Thresholding &  Inverting** :
 
    This stage takes the full color image plus padding from the last stage and converts it to an inverted binary image
 
 Result of step 1 & 2 
 
 <img src = "img_Preprocessing/processed_img.png" >
+
+3. **Eroding Vertical Lines** :
+
+   To understand how vertical lines and all text erode, you need to understand the concepts of "*erosion*" and "*dilation*" properly.*“kernel”* is in the context of erosion and dilation. Basically, it’s a shape that is taken over the images and used to transform the 
+   underlying image by removing or adding pixels to the original image.
 
