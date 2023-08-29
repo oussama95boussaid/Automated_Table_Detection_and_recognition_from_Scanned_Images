@@ -4,7 +4,7 @@
 
 The **Automated Table Detection and Recognition from Scanned Images project** is a sophisticated algorithm designed to accurately identify tables within scanned images. Its core objective is to overcome challenges related to diverse layouts, fonts, and varying image quality levels. This algorithm not only excels at locating tables but also seamlessly extracts valuable data from them.
 
-# **Key Features**
+# Key Features
 
 - **Precise Table Identification** : Our algorithm can precisely locate tables within scanned images, even in cases with complex layouts and diverse fonts.
 
@@ -12,11 +12,11 @@ The **Automated Table Detection and Recognition from Scanned Images project** is
 
 - **Data Extraction** : Beyond table detection, this algorithm excels at extracting data from these tables, making it a comprehensive tool for data analysis.
 
-# **Getting Started**
+# Getting Started
 
 These instructions will help you get a copy of the project up and running on your local machine for development and testing purposes.
 
-# **Prerequisites**
+# Prerequisites
 
 To run this project, you'll need:
 
@@ -29,25 +29,26 @@ To run this project, you'll need:
 - *subprocess*
 - *PIL*
 
-# **Installation**
+# Installation
 
     git clone https://github.com/oussama95boussaid/Automated_Table_Detection_and_recognition_from_Scanned_Images_PDFs.git
     cd Automated_Table_Detection_and_recognition_from_Scanned_Images_PDFs
 
-# **Install the required libraries for linux:**
+# Install the required libraries for linux:
 
     !sudo apt install tesseract-ocr-fra
     !pip install pytesseract transformers ultralyticsplus==0.0.23 ultralytics==8.0.21
 
-# **Run the algorithm:**
+# Run the algorithm:
 
     python table_detection_and_extraction_Project.py
 
-# **Project Stepts :**
+# Project Stepts :
 
 -  step 1 : Detecting the table Using Yolov8
 -  step 2 : Extract table from the image
 -  step 3 : Finding the cells & extracting the text using OCR
 -  step 4 : Generating The CSV file
 
+# Data Preprocessing
 
