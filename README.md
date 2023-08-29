@@ -114,6 +114,12 @@ This will help us get a clear picture of the OCR process. In the end, only the t
    Now that we have an image that is only made up of the lines of the table, we can do a “subtract” and get an image without the lines. image that is only made up of the lines of the table, we can do a *subtract* and get an image without the lines.
    <img src = "img_Preprocessing/img_without_lines.png" >
 
+7. **Use Dilation To Convert The Words Into Blobs**
+
+   Convert all the text of the image with only text into blobs, I used long horizontal kernel. That helps us dilate the words and turn them into horizontal smudges.And a square kernel just to fill in any gaps.
+   <img src = "img_Preprocessing/dilated_img.png" >
+
+   
 
 
    
