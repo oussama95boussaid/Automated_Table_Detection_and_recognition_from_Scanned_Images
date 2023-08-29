@@ -121,11 +121,14 @@ This will help us get a clear picture of the OCR process. In the end, only the t
 
 8. **Find The Contours Of The Blobs** :
 
-   I used findContours method, to find where all the blobs are, And draw them on the original image for the purposes of visualization. 
+   I used **findContours** method, to find where all the blobs are, And draw them on the original image for the purposes of visualization. 
+   <img src = "img_Preprocessing/image_with_contours_drawn.png" >
+   
+9. **Convert The Blobs Into Bounding Boxes**
+
+   I used a new OpenCV function called: **boundingRect**,The function takes in the contour (which is made up of many points) and reduces it to a box that can fully enclose the contour shape.
    <img src = "img_Preprocessing/img_bouding_boxes.png" >
 
-    
-    
 
    
 
