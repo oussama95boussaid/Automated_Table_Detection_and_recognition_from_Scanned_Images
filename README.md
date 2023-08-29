@@ -72,9 +72,12 @@ After detecting the table that's the result of cropping it from the image based 
 
 <img src = "img_Preprocessing/extracted_img.png" >
 
-
 # Finding the cells & extracting the text using OCR from the table
 
-**Removing The Lines**
+**Data Preprocessing**
 
-This stage is mainly to delete table Lines. This will help us get a clear picture of the OCR process. In the end, only the text in the table cells remains in the image.
+This stage **Removing The Lines** is mainly to delete table Lines. 
+
+This will help us get a clear picture of the OCR process. In the end, only the text in the table cells remains in the image.
+
+
