@@ -119,6 +119,14 @@ This will help us get a clear picture of the OCR process. In the end, only the t
    Convert all the text of the image with only text into blobs, I used long horizontal kernel. That helps us dilate the words and turn them into horizontal smudges.And a square kernel just to fill in any gaps.
    <img src = "img_Preprocessing/dilated_img.png" >
 
+8. **Find The Contours Of The Blobs** :
+
+   I used findContours method, to find where all the blobs are, And draw them on the original image for the purposes of visualization. 
+   <img src = "img_Preprocessing/img_bouding_boxes.png" >
+
+    
+    
+
    
 
 
