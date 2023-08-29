@@ -66,6 +66,10 @@ To optimize our model's performance, we fine-tuned the following parameters:
 
 These parameter settings were meticulously chosen to strike a balance between precision and recall, ensuring that our table detection model performed effectively and efficiently.
 
+<img src = "img_Preprocessing/combined_org_dete_img.png" >
+
+
+
 # Finding the cells & extracting the text using OCR from the table
 
 **Removing The Lines**
