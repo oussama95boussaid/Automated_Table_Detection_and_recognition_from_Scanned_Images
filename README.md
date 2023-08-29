@@ -129,6 +129,17 @@ This will help us get a clear picture of the OCR process. In the end, only the t
    I used a new OpenCV function called: **boundingRect**,The function takes in the contour (which is made up of many points) and reduces it to a box that can fully enclose the contour shape.
    <img src = "img_Preprocessing/img_bouding_boxes.png" >
 
+10. **Sorting The Bounding Boxes By X And Y Coordinates To Make Rows And Columns** :
+
+   This step is some good old-fashioned logic. No OpenCV is needed. I'm just going to create an array of arrays of the bounding boxes in order to represent the rows and columns of the table.
+
+   Steps :
+   
+   - Find the average height of the boxes. We are doing this because we want to use the average height to decide if a box is in this row or the next. If we find that y has changed a lot, we are dealing with a box from the next row.
+   - sort the boxes by the y coordinate. This will help to make sure that all the boxes in the same row are together.
+   - I start making the “row” arrays. I do this by looking at the Y coordinate. If it has changed a lot from the last one, we are in a new row. If it has changed a little we add the box to the same row.
+   - In the end, I get an array with sub-arrays representing the rows.
+   - Sort all the bounding boxes that make up the rows by the X coordinate. This makes sure that they are all in the correct order within the row
 
    
 
