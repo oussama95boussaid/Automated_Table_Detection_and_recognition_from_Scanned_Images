@@ -45,5 +45,6 @@ To run this project, you'll need:
 
 # **Project Stepts :**
 
+- step 1 : Detecting the table
 
 
