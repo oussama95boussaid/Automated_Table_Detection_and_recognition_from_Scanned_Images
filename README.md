@@ -101,7 +101,7 @@ This will help us get a clear picture of the OCR process. In the end, only the t
 4. **Eroding Horizontal Lines** :
 
    Similar process to erode away the horizontal lines
-   <img src = "img_Preprocessing/ver_dilate_img.png" >
+   <img src = "img_Preprocessing/hor_dilate_img.png" >
 
 
    
