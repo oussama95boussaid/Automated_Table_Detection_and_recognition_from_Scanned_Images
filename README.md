@@ -103,6 +103,11 @@ This will help us get a clear picture of the OCR process. In the end, only the t
    Similar process to erode away the horizontal lines
    <img src = "img_Preprocessing/hor_dilate_img.png" >
 
+5. **Combining Vertical And Horizontal Lines** :
+
+   Combine the horizontal and vertical lines using a simple *add* operation. It just adds the white pixels in both image
+   <img src = "img_Preprocessing/combined_img.png" >
+
 
    
 
