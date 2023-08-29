@@ -145,8 +145,10 @@ This will help us get a clear picture of the OCR process. In the end, only the t
 11. **Extracting The Text From The Bounding Boxes Using OCR** :
 
      Loop over all the rows and start to make little image slices based on the bounding boxes. Each slice will have a word. I save the image and then run **TesseractOCR** on it.Then I save  all the image slices to a file and then we are calling the Tesseract command 
-     line tool. Each of the image slices with a single word look something like this:
-     <img src = "img_Preprocessing/cell_cropped.png" >
+     line tool.
+
+     Each of the image slices with a single word look something like this:
+     <img src = "img_Preprocessing/cell_cropped.jpg" >
 
 
    
