@@ -52,3 +52,6 @@ To run this project, you'll need:
 
 # Data Preprocessing
 
+**Removing The Lines**
+
+This stage is mainly to delete table Lines. This will help us get a clear picture of the OCR process. In the end, only the text in the table cells remains in the image.
