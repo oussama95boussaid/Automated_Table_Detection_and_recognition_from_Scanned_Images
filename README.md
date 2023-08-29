@@ -80,7 +80,12 @@ This stage **Removing The Lines** is mainly to delete table Lines.
 
 This will help us get a clear picture of the OCR process. In the end, only the text in the table cells remains in the image.
 
-- add 10 percent padding : This will be needed in the next stage when we remove the lines Without this, the lines do not get removed fully
-- Grey-scaling & Thresholding &  Inverting : This stage takes the full color image plus padding from the last stage and converts it to an inverted binary image
+1. add 10 percent padding :
+
+   This will be needed in the next stage when we remove the lines Without this, the lines do not get removed fully
+ 
+2. Grey-scaling & Thresholding &  Inverting :
+
+   This stage takes the full color image plus padding from the last stage and converts it to an inverted binary image
 
 
