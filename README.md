@@ -45,6 +45,9 @@ To run this project, you'll need:
 
 # **Project Stepts :**
 
--  step 1 : Detecting the table
+-  step 1 : Detecting the table Using Yolov8
+-  step 2 : Extract table from the image
+-  step 3 : Finding the cells & extracting the text using OCR
+-  step 4 : Generating The CSV file
 
 
