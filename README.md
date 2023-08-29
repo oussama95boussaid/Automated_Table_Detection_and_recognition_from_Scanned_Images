@@ -109,6 +109,10 @@ This will help us get a clear picture of the OCR process. In the end, only the t
    kernel. The simple kernel will go over the image and thicken things up
    <img src = "img_Preprocessing/combined_img.png" >
 
+6. **Removing The Lines** : 
+
+   Now that we have an image that is only made up of the lines of the table, we can do a “subtract” and get an image without the lines. image that is only made up of the lines of the table, we can do a *subtract* and get an image without the lines.
+   <img src = "img_Preprocessing/img_without_lines.png" >
 
 
 
