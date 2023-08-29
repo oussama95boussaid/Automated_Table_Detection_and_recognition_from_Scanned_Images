@@ -105,8 +105,12 @@ This will help us get a clear picture of the OCR process. In the end, only the t
 
 5. **Combining Vertical And Horizontal Lines** :
 
-   Combine the horizontal and vertical lines using a simple *add* operation. It just adds the white pixels in both image
+   - Combine the horizontal and vertical lines using a simple *add* operation. It just adds the white pixels in both image
    <img src = "img_Preprocessing/combined_img.png" >
+
+   - I used *dilate* once again to “thicken” these lines, befor that i used **getStructuringElement** in order to create a nice simple rectangular kernel. The simple kernel will go over the image and thicken things up
+   <img src = "img_Preprocessing/dilated_img.png" >
+
 
 
    
