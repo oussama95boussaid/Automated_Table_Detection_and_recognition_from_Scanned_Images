@@ -98,5 +98,11 @@ This will help us get a clear picture of the OCR process. In the end, only the t
    underlying image by removing or adding pixels to the original image.for more information <a href = "https://docs.opencv.org/4.x/dd/dd7/tutorial_morph_lines_detection.html">Extract horizontal and vertical lines by using morphological operations </a>
    <img src = "img_Preprocessing/ver_dilate_img.png" >
 
+4. **Eroding Horizontal Lines** :
+
+   Similar process to erode away the horizontal lines
+   <img src = "img_Preprocessing/ver_dilate_img.png" >
+
+
    
 
