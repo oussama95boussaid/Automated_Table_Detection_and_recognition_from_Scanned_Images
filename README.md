@@ -131,17 +131,22 @@ This will help us get a clear picture of the OCR process. In the end, only the t
 
 10. **Sorting The Bounding Boxes By X And Y Coordinates To Make Rows And Columns** :
 
-   This step is some good old-fashioned logic. No OpenCV is needed. I'm just going to create an array of arrays of the bounding boxes in order to represent the rows and columns of the table.
+    This step is some good old-fashioned logic. No OpenCV is needed. I'm just going to create an array of arrays of the bounding boxes in order to represent the rows and columns of the table.
 
-   Steps :
+    Steps :
    
-   - Find the average height of the boxes. We are doing this because we want to use the average height to decide if a box is in this row or the next. If we find that y has changed a lot, we are dealing with a box from the next row.
-   - sort the boxes by the y coordinate. This will help to make sure that all the boxes in the same row are together.
-   - I start making the “row” arrays. I do this by looking at the Y coordinate. If it has changed a lot from the last one, we are in a new row. If it has changed a little we add the box to the same row.
-   - In the end, I get an array with sub-arrays representing the rows.
-   - Sort all the bounding boxes that make up the rows by the X coordinate. This makes sure that they are all in the correct order within the row
+       - Find the average height of the boxes. We are doing this because we want to use the average height to decide if a box is in this row or the next. If we find that y has changed a lot, we are dealing with a box from the next row.
+       - sort the boxes by the y coordinate. This will help to make sure that all the boxes in the same row are together.
+       - I start making the “row” arrays. I do this by looking at the Y coordinate. If it has changed a lot from the last one, we are in a new row. If it has changed a little we add the box to the same row.
+       - In the end, I get an array with sub-arrays representing the rows.
+       - Sort all the bounding boxes that make up the rows by the X coordinate. This makes sure that they are all in the correct order within the row
 
    
+11. **Extracting The Text From The Bounding Boxes Using OCR** :
+
+     Loop over all the rows and start to make little image slices based on the bounding boxes. Each slice will have a word. I save the image and then run **TesseractOCR** on it.Then I save  all the image slices to a file and then we are calling the Tesseract command 
+     line tool. Each of the image slices with a single word look something like this:
+     <img src = "img_Preprocessing/cell_cropped.png" >
 
 
    
