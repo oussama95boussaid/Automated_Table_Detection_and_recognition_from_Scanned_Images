@@ -88,4 +88,6 @@ This will help us get a clear picture of the OCR process. In the end, only the t
 
    This stage takes the full color image plus padding from the last stage and converts it to an inverted binary image
 
+Result of step 1 & 2 
+<img src = "img_Preprocessing/processed_img" >
 
