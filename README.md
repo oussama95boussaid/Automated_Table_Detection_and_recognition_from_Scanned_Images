@@ -148,7 +148,11 @@ This will help us get a clear picture of the OCR process. In the end, only the t
      line tool.
 
      Each of the image slices with a single word look something like this:
+    
      <img src = "img_Preprocessing/cell_cropped.jpg" >
+12. **Generating The CSV** 
+13. **Result** :
+    <img src = "img_Preprocessing/data_extracted.png" >
 
 
    
