@@ -90,10 +90,13 @@ This will help us get a clear picture of the OCR process. In the end, only the t
 
  Result of step 1 & 2 
 
-<img src = "img_Preprocessing/processed_img.png" >
+ <img src = "img_Preprocessing/processed_img.png" >
 
 3. **Eroding Vertical Lines** :
 
    To understand how vertical lines and all text erode, you need to understand the concepts of "*erosion*" and "*dilation*" properly.*“kernel”* is in the context of erosion and dilation. Basically, it’s a shape that is taken over the images and used to transform the 
    underlying image by removing or adding pixels to the original image.for more information <a href = "https://docs.opencv.org/4.x/dd/dd7/tutorial_morph_lines_detection.html">Extract horizontal and vertical lines by using morphological operations </a>
+   <img src = "img_Preprocessing/ver_dilate_img.png" >
+
+   
 
