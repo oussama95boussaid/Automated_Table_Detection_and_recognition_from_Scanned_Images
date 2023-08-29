@@ -45,12 +45,28 @@ To run this project, you'll need:
 
 # Project Stepts :
 
--  step 1 : Detecting the table Using Yolov8
+-  step 1 : Detecting the table 
 -  step 2 : Extract table from the image
 -  step 3 : Finding the cells & extracting the text using OCR
 -  step 4 : Generating The CSV file
 
-# Data Preprocessing
+# Detecting the table
+
+In the process of our project, we utilized the YOLOv8 model with specific parameter configurations to tackle the critical task of table detection. This step was pivotal in our workflow, as accurate table detection is a fundamental component of various computer vision applications.
+
+To optimize our model's performance, we fine-tuned the following parameters:
+
+- Confidence Threshold (conf): We set this to 0.25, which determined the minimum confidence level a detected object had to meet to be considered valid. Lower values can result in more detections but might also increase false positives.
+
+- Intersection over Union Threshold (iou): We configured this to 0.45, which controlled the overlap allowed between different bounding boxes during Non-Maximum Suppression (NMS). A higher value can lead to more consolidated bounding boxes.
+
+- Class-Agnostic NMS (agnostic_nms): We kept this parameter set to False, meaning that NMS was class-specific. In other words, objects of different classes were treated separately during NMS.
+
+- Maximum Detections per Image (max_det): We limited the number of detections per image to 1000. This helped manage the computational load and memory usage, especially in situations where numerous objects were present in an image.
+
+These parameter settings were meticulously chosen to strike a balance between precision and recall, ensuring that our table detection model performed effectively and efficiently.
+
+# Finding the cells & extracting the text using OCR from the table
 
 **Removing The Lines**
 
