@@ -12,8 +12,8 @@ import csv
 
 
 #load The image
-image = './test_images/test3.jpg'
-img = Image.open(image)
+image = cv2.imread('./test_images/test3.jpg')
+img = Image.fromarray(image)
 
 # load model
 model = YOLO('keremberke/yolov8m-table-extraction')
@@ -27,7 +27,6 @@ model.overrides['max_det'] = 1000  # maximum number of detections per image
 # perform inference
 results = model.predict(img)
 
-img = np.array(Image.open(image))
 tables_vesul=[]
 tables=[]
 
@@ -39,7 +38,7 @@ for i in range(len(results[0].boxes.data.numpy())):
   y1-=10
 
   #cropping
-  cropped_image = img[y1:y2, x1:x2]
+  cropped_image = image[y1:y2, x1:x2]
   print(cropped_image.shape)
   tables.append(cropped_image)
   image_tab = Image.fromarray(cropped_image)

@@ -7,7 +7,7 @@ from ultralyticsplus import YOLO, render_result
 from paddleocr import PaddleOCR,draw_ocr
 from PIL import Image #pillow
 
-anaylise = cv2.imread("anaylise1.jpg")  #RGB
+anaylise = cv2.imread("./test_images/anaylise1.jpg")  #RGB
 anaylise1 = Image.fromarray(anaylise)
 
 # load model
