@@ -68,10 +68,93 @@ These parameter settings were meticulously chosen to strike a balance between pr
 
 <img src = "img_Preprocessing/combined_org_dete_img.png" >
 
+After detecting the table that's the result of cropping it from the image based on boxes
 
+<img src = "img_Preprocessing/extracted_img.png" >
 
 # Finding the cells & extracting the text using OCR from the table
 
-**Removing The Lines**
+**Data Preprocessing**
 
-This stage is mainly to delete table Lines. This will help us get a clear picture of the OCR process. In the end, only the text in the table cells remains in the image.
+This stage **Removing The Lines** is mainly to delete table Lines. 
+
+This will help us get a clear picture of the OCR process. In the end, only the text in the table cells remains in the image.
+
+1. **add 10 percent padding** :
+
+   This will be needed in the next stage when we remove the lines Without this, the lines do not get removed fully
+ 
+2. **Grey-scaling & Thresholding &  Inverting** :
+
+   This stage takes the full color image plus padding from the last stage and converts it to an inverted binary image
+
+ Result of step 1 & 2 
+
+ <img src = "img_Preprocessing/processed_img.png" >
+
+3. **Eroding Vertical Lines** :
+
+   To understand how vertical lines and all text erode, you need to understand the concepts of "*erosion*" and "*dilation*" properly.*“kernel”* is in the context of erosion and dilation. Basically, it’s a shape that is taken over the images and used to transform the 
+   underlying image by removing or adding pixels to the original image.for more information <a href = "https://docs.opencv.org/4.x/dd/dd7/tutorial_morph_lines_detection.html">Extract horizontal and vertical lines by using morphological operations </a>
+   <img src = "img_Preprocessing/ver_dilate_img.png" >
+
+4. **Eroding Horizontal Lines** :
+
+   Similar process to erode away the horizontal lines
+   <img src = "img_Preprocessing/hor_dilate_img.png" >
+
+5. **Combining Vertical And Horizontal Lines** :
+
+   Combine the horizontal and vertical lines using a simple *add* operation. It just adds the white pixels in both image, I used *dilate* once again to “thicken” these lines, befor that i used **getStructuringElement** in order to create a nice simple rectangular 
+   kernel. The simple kernel will go over the image and thicken things up
+   <img src = "img_Preprocessing/combined_img.png" >
+
+6. **Removing The Lines** : 
+
+   Now that we have an image that is only made up of the lines of the table, we can do a “subtract” and get an image without the lines. image that is only made up of the lines of the table, we can do a *subtract* and get an image without the lines.
+   <img src = "img_Preprocessing/img_without_lines.png" >
+
+7. **Use Dilation To Convert The Words Into Blobs**
+
+   Convert all the text of the image with only text into blobs, I used long horizontal kernel. That helps us dilate the words and turn them into horizontal smudges.And a square kernel just to fill in any gaps.
+   <img src = "img_Preprocessing/dilated_img.png" >
+
+8. **Find The Contours Of The Blobs** :
+
+   I used **findContours** method, to find where all the blobs are, And draw them on the original image for the purposes of visualization. 
+   <img src = "img_Preprocessing/image_with_contours_drawn.png" >
+   
+9. **Convert The Blobs Into Bounding Boxes**
+
+   I used a new OpenCV function called: **boundingRect**,The function takes in the contour (which is made up of many points) and reduces it to a box that can fully enclose the contour shape.
+   <img src = "img_Preprocessing/img_bouding_boxes.png" >
+
+10. **Sorting The Bounding Boxes By X And Y Coordinates To Make Rows And Columns** :
+
+    This step is some good old-fashioned logic. No OpenCV is needed. I'm just going to create an array of arrays of the bounding boxes in order to represent the rows and columns of the table.
+
+    Steps :
+   
+       - Find the average height of the boxes. We are doing this because we want to use the average height to decide if a box is in this row or the next. If we find that y has changed a lot, we are dealing with a box from the next row.
+       - sort the boxes by the y coordinate. This will help to make sure that all the boxes in the same row are together.
+       - I start making the “row” arrays. I do this by looking at the Y coordinate. If it has changed a lot from the last one, we are in a new row. If it has changed a little we add the box to the same row.
+       - In the end, I get an array with sub-arrays representing the rows.
+       - Sort all the bounding boxes that make up the rows by the X coordinate. This makes sure that they are all in the correct order within the row
+
+   
+11. **Extracting The Text From The Bounding Boxes Using OCR** :
+
+     Loop over all the rows and start to make little image slices based on the bounding boxes. Each slice will have a word. I save the image and then run **TesseractOCR** on it.Then I save  all the image slices to a file and then we are calling the Tesseract command 
+     line tool.
+
+     Each of the image slices with a single word look something like this:
+    
+     <img src = "img_Preprocessing/cell_cropped.jpg" >
+12. **Generating The CSV** 
+13. **Result** :
+
+    <img src = "img_Preprocessing/data_extracted.png" >
+
+
+   
+
